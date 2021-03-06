@@ -4,6 +4,8 @@ This repository is a PyTorch implementation of our coordinate attention (will ap
 
 Our coordinate attention can be easily plugged into any classic building blocks as a feature representation augmentation tool. Here ([pytorch-image-models](https://github.com/rwightman/pytorch-image-models)) is a code base that you might want to train a classification model on ImageNet.
 
+Note that the results reported in the paper are based on regular training setting (w/o label smoothing, random augmentation, random erasing, mixup). For specific numbers in ImageNet classification, COCO object detection, and semantic segmentation, please refer to [our paper](https://arxiv.org/abs/2103.02907).
+
 
 ### Comparison to Squeeze-and-Excitation block and CBAM
 
@@ -22,6 +24,7 @@ Our coordinate attention can be easily plugged into any classic building blocks 
 
 - SiLU activation (h_swish in the code) works better than ReLU6 
 - Either horizontal or vertical direction attention performs the same to the SE attention
+- When applied to MobileNeXt, adding the attention block after the first depthwise 3x3 convolution works better
 
 ### Object detection
 
