@@ -18,6 +18,11 @@ Our coordinate attention can be easily plugged into any classic building blocks 
 
 (a) MobileNetV2 (b) MobileNeXt
 
+### Some tips for designing lightweight attention blocks
+
+- SiLU activation (h_swish in the code) works better than ReLU6 
+- Either horizontal or vertical direction attention performs the same to the SE attention
+
 ### Object detection
 
 We use this [repo (ssdlite-pytorch-mobilenext)](https://github.com/Andrew-Qibin/ssdlite-pytorch-mobilenext).
