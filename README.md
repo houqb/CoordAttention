@@ -9,4 +9,4 @@ Our coordinate attention can be easily plugged into any classic building blocks 
 
 ![diagram](diagram.png)
 
-(a) Squeeze-and-Excitation block (b) CBAM (C) Coordinate attention block
+(a) Squeeze-and-Excitation block      (b) CBAM      (C) Coordinate attention block
