@@ -25,6 +25,7 @@ Note that the results reported in the paper are based on regular training settin
 - SiLU activation (h_swish in the code) works better than ReLU6 
 - Either horizontal or vertical direction attention performs the same to the SE attention
 - When applied to MobileNeXt, adding the attention block after the first depthwise 3x3 convolution works better
+- Note sure whether the results would be better if a softmax is applied between the horizontal and vertical features
 
 ### Object detection
 
