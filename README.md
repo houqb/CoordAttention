@@ -15,6 +15,7 @@ Our coordinate attention can be easily plugged into any classic building blocks 
 ### How to plug the proposed CA block in the [inverted residual block](https://openaccess.thecvf.com/content_cvpr_2018/papers/Sandler_MobileNetV2_Inverted_Residuals_CVPR_2018_paper.pdf) and the [sandglass block](https://arxiv.org/pdf/2007.02269.pdf)
 
 ![wheretoplug](attpos.png)
+
 (a) MobileNetV2 (b) MobileNeXt
 
 ### Object detection
