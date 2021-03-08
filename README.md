@@ -61,4 +61,20 @@ You may want to cite:
   booktitle={ECCV},
   year={2020}
 }
+
+@inproceedings{hu2018squeeze,
+  title={Squeeze-and-excitation networks},
+  author={Hu, Jie and Shen, Li and Sun, Gang},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={7132--7141},
+  year={2018}
+}
+
+@inproceedings{woo2018cbam,
+  title={Cbam: Convolutional block attention module},
+  author={Woo, Sanghyun and Park, Jongchan and Lee, Joon-Young and Kweon, In So},
+  booktitle={Proceedings of the European conference on computer vision (ECCV)},
+  pages={3--19},
+  year={2018}
+}
 ```
