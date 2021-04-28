@@ -6,6 +6,7 @@ Our coordinate attention can be easily plugged into any classic building blocks 
 
 Note that the results reported in the paper are based on regular training setting (200 training epochs, random crop, and cosine learning schedule) **without** using extra label smoothing, random augmentation, random erasing, mixup. For specific numbers in ImageNet classification, COCO object detection, and semantic segmentation, please refer to [our paper](https://arxiv.org/abs/2103.02907).
 
+
 ### Updates
 
 - [Pretrained model](https://github.com/Andrew-Qibin/CoordAttention/blob/main/mbv2_ca.pth) (MobileNetV2 with CA) and [model file](https://github.com/Andrew-Qibin/CoordAttention/blob/main/mbv2_ca.py) are both available.
@@ -23,6 +24,7 @@ Note that the results reported in the paper are based on regular training settin
 ![wheretoplug](attpos.png)
 
 (a) MobileNetV2 (b) MobileNeXt
+
 
 ### Numerical results on ImageNet
 
