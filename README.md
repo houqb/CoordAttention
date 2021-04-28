@@ -6,6 +6,10 @@ Our coordinate attention can be easily plugged into any classic building blocks 
 
 Note that the results reported in the paper are based on regular training setting (200 training epochs, random crop, and cosine learning schedule) **without** using extra label smoothing, random augmentation, random erasing, mixup. For specific numbers in ImageNet classification, COCO object detection, and semantic segmentation, please refer to [our paper](https://arxiv.org/abs/2103.02907).
 
+### Updates
+
+- [Pretrained model](https://github.com/Andrew-Qibin/CoordAttention/blob/main/mbv2_ca.pth) (MobileNetV2 with CA) and [model file](https://github.com/Andrew-Qibin/CoordAttention/blob/main/mbv2_ca.py) are both available.
+
 
 ### Comparison to Squeeze-and-Excitation block and CBAM
 
@@ -20,6 +24,23 @@ Note that the results reported in the paper are based on regular training settin
 
 (a) MobileNetV2 (b) MobileNeXt
 
+### Numerical results on ImageNet
+
+| Model              | Params  |  M-Adds | Top 1 |
+| :----------------- | :------ | :------ | :---- |
+| MobileNetV2-1.0    | 3.5M    | 300M    | 72.3  |
+| MobileNetV2 + SE   | 3.89M   | 300M    | 73.5  |
+| MobileNetV2 + CBAM | 3.89M   | 300M    | 73.6  |
+| MobileNetV2 + CA   | 3.95M   | 310M    | 74.3  |
+
+| Model             | Params  |  M-Adds | Top 1 |
+| :---------------- | :------ | :------ | :---- |
+| MobileNeXt-1.0    | 3.5M    | 300M    | 74.0  |
+| MobileNeXt + SE   | 3.89M   | 300M    | 74.7  |
+| MobileNeXt + CA   | 4.09M   | 330M    | 75.2  |
+
+[Pretrained model](https://github.com/Andrew-Qibin/CoordAttention/blob/main/mbv2_ca.pth) (MobileNetV2 with CA) and [model file](https://github.com/Andrew-Qibin/CoordAttention/blob/main/mbv2_ca.py) are both available.
+
 ### Some tips for designing lightweight attention blocks
 
 - SiLU activation (h_swish in the code) works better than ReLU6 
@@ -31,9 +52,57 @@ Note that the results reported in the paper are based on regular training settin
 
 We use this [repo (ssdlite-pytorch-mobilenext)](https://github.com/Andrew-Qibin/ssdlite-pytorch-mobilenext).
 
+Results on COCO val
+
+| Model              | Method     |  Params | AP |
+| :----------------- | :--------- | :------ | :---- |
+| MobileNetV1        | SSDLite320 | 5.1M    | 22.2  |
+| MobileNetV2        | SSDLite320 | 4.3M    | 22.3  |
+| MobileNetV2        | SSDLite320 | 5.0M    | 22.0  |
+| MnasNet-A1         | SSDLite320 | 4.9M    | 23.0  |
+| MobileNeXt         | SSDLite320 | 4.4M    | 23.3  |
+| MobileNetV2 + SE   | SSDLite320 | 4.7M    | 23.7  |
+| MobileNetV2 + CBAM | SSDLite320 | 4.7M    | 23.0  |
+| MobileNetV2 + CA   | SSDLite320 | 4.8M    | 24.5  |
+
+Results on Pascal VOC 2007 test
+
+| Model              | Method     |  Params | mAP |
+| :----------------- | :--------- | :------ | :---- |
+| MobileNetV2        | SSDLite320 | 4.3M    | 71.7  |
+| MobileNetV2 + SE   | SSDLite320 | 4.7M    | 71.7  |
+| MobileNetV2 + CBAM | SSDLite320 | 4.7M    | 71.7  |
+| MobileNetV2 + CA   | SSDLite320 | 4.8M    | 73.1  |
+
 ### Semantic segmentation
 
 We use this [repo](https://github.com/Andrew-Qibin/SPNet). You can also refer to [mmsegmentation](https://github.com/open-mmlab/mmsegmentation) alternatively.
+
+Results on Pascal VOC 2012 val
+
+| Model              | Method     | Stride | Params | mIoU  |
+| :----------------- | :--------- | :------| :----- | :---- |
+| MobileNetV2        | DeepLabV3  | 16     | 4.5    | 70.84 |
+| MobileNetV2 + SE   | DeepLabV3  | 16     | 4.9    | 71.69 |
+| MobileNetV2 + CBAM | DeepLabV3  | 16     | 4.9    | 71.28 |
+| MobileNetV2 + CA   | DeepLabV3  | 16     | 5.0    | 73.32 |
+| MobileNetV2        | DeepLabV3  | 8      | 4.5    | 71.82 |
+| MobileNetV2 + SE   | DeepLabV3  | 8      | 4.9    | 72.52 |
+| MobileNetV2 + CBAM | DeepLabV3  | 8      | 4.9    | 71.67 |
+| MobileNetV2 + CA   | DeepLabV3  | 8      | 5.0    | 73.96 |
+
+
+Results on Cityscapes val 
+
+| Model              | Method     | Stride | Params | mIoU |
+| :----------------- | :--------- | :------| :----- | :--- |
+| MobileNetV2        | DeepLabV3  | 8      | 4.5    | 71.4 |
+| MobileNetV2 + SE   | DeepLabV3  | 8      | 4.9    | 72.2 |
+| MobileNetV2 + CBAM | DeepLabV3  | 8      | 4.9    | 71.4 |
+| MobileNetV2 + CA   | DeepLabV3  | 8      | 5.0    | 74.0 |
+
+We observe that our coordinate attention yields larger improvement on semantic segmentation than ImageNet classification and object detection. We argue that this is because our coordinate attention is able to capture long-range dependencies with precise postional information, which is more beneficial to vision tasks with dense predictions, such as semantic segmentation.
+
 
 ### Citation
 
