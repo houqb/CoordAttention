@@ -28,14 +28,14 @@ Note that the results reported in the paper are based on regular training settin
 
 ### Numerical results on ImageNet
 
-| Model              | Params  |  M-Adds | Top 1 |
-| :----------------- | :------ | :------ | :---- |
-| MobileNetV2-1.0    | 3.5M    | 300M    | 72.3  |
-| MobileNetV2 + SE   | 3.89M   | 300M    | 73.5  |
-| MobileNetV2 + CBAM | 3.89M   | 300M    | 73.6  |
-| MobileNetV2 + CA   | 3.95M   | 310M    | 74.3  |
+| Method             | Params  |  M-Adds | Top 1 | Model |
+| :----------------- | :------ | :------ | :---- | :---- |
+| MobileNetV2-1.0    | 3.5M    | 300M    | 72.3  |       |
+| MobileNetV2 + SE   | 3.89M   | 300M    | 73.5  |       |
+| MobileNetV2 + CBAM | 3.89M   | 300M    | 73.6  |       |
+| MobileNetV2 + CA   | 3.95M   | 310M    | 74.3  | [link](https://github.com/Andrew-Qibin/CoordAttention/blob/main/mbv2_ca.pth) |
 
-| Model             | Params  |  M-Adds | Top 1 |
+| Method            | Params  |  M-Adds | Top 1 |
 | :---------------- | :------ | :------ | :---- |
 | MobileNeXt-1.0    | 3.5M    | 300M    | 74.0  |
 | MobileNeXt + SE   | 3.89M   | 300M    | 74.7  |
