@@ -11,6 +11,7 @@ Note that the results reported in the paper are based on regular training settin
 
 - [Pretrained model](https://github.com/Andrew-Qibin/CoordAttention/blob/main/mbv2_ca.pth) (MobileNetV2 with CA) and [model file](https://github.com/Andrew-Qibin/CoordAttention/blob/main/mbv2_ca.py) are both available.
 
+---
 
 ### Comparison to Squeeze-and-Excitation block and CBAM
 
