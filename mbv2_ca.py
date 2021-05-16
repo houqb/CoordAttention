@@ -33,9 +33,7 @@ class h_swish(nn.Module):
 class swish(nn.Module):
     def forward(self, x):
         return x * torch.sigmoid(x)
-
-        return x * y
-
+    
 class CoordAtt(nn.Module):
     def __init__(self, inp, oup, groups=32):
         super(CoordAtt, self).__init__()
